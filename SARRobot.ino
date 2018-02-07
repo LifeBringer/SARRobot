@@ -29,9 +29,7 @@ void loop() {
   // If 'BRAKE' or 'RELEASE' is used, the 'speed' parameter  
   // is ignored.
   
-  // Motor Portion
-  motor(3, FORWARD, 255);  
-  motor(4, FORWARD, 255);
+
   
   //Encoder Portion
   // read the input pin:  
@@ -54,3 +52,11 @@ void loop() {
   Serial.println(distance2);
  
 }
+
+void turnLeft()
+{
+    // Motor Portion
+  motor(3, FORWARD, 0);  
+  motor(4, FORWARD, 150);
+}
+
