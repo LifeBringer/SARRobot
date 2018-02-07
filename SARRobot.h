@@ -10,7 +10,8 @@
 // Setup Routine
 void setup() {
   Serial.begin(9600);  
-  Serial.println("Simple Motor Shield sketch");
+  pinMode(encoder1, INPUT);  
+  pinMode(encoder2, INPUT);
 }
 
 void loop() {
@@ -22,9 +23,34 @@ void loop() {
 // so it can also be used to drive something low.  
 // The 'speed' (the PWM, the intensity) can be set   
 // to zero, that would make the output disabled   
-// and floating.    
-/*motor_output(MOTOR3_A, HIGH, 255);  
-delay(2000);  
-motor_output(MOTOR3_A, LOW, 255);*/
-  // Suppose a DC motor is connected to M1_A(+) and M1_B(-)  // Let it run full speed forward and half speed backward.  // If 'BRAKE' or 'RELEASE' is used, the 'speed' parameter  // is ignored.  motor(3, FORWARD, 255);  motor(4, FORWARD, 255);
+// and floating.   
+  // Suppose a DC motor is connected to M1_A(+) and M1_B(-)  
+  // Let it run full speed forward and half speed backward.  
+  // If 'BRAKE' or 'RELEASE' is used, the 'speed' parameter  
+  // is ignored.
+  
+  // Motor Portion
+  motor(3, FORWARD, 255);  
+  motor(4, FORWARD, 255);
+  
+  //Encoder Portion
+  // read the input pin:  
+  int buttonState = digitalRead(encoder1);  
+  int buttonState2 = digitalRead(encoder2);  
+  // print out the state of the button:  
+  Serial.print(buttonState);  
+  Serial.println(buttonState2);  
+  delay(1);       
+  // delay in between reads for stability
+  
+  //IR portion
+    // 5v
+  float volts1 = analogRead(sensor1)*0.0048828125;  // value from sensor * (5/1024)
+  float volts2 = analogRead(sensor2)*0.0048828125;  // value from sensor * (5/1024)
+  int distance1 = 13*pow(volts1, -1); // worked out from datasheet graph
+  int distance2 = 13*pow(volts2, -1); // worked out from datasheet graph
+  delay(10); // slow down serial port 
+  Serial.print(volts1);
+  Serial.println(distance2);
+ 
 }
