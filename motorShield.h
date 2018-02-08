@@ -183,8 +183,8 @@ void motor(int nMotor, int command, int speed)
     switch (command)
     {
     case FORWARD:
-      motor_output = (motorA, HIGH, speed);
-      motor_output = (motorB, LOW, -1);     // -1: no PWM set
+       motor_output (motorA, HIGH, speed);
+      motor_output (motorB, LOW, -1);     // -1: no PWM set
       break;
     case BACKWARD:
       motor_output (motorA, LOW, speed);
