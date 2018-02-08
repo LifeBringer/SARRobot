@@ -1,20 +1,26 @@
 //All Libraries
-#include <MSMotorSheild.h>
-#include <PID_v1.h>
+//#include "MSMotorShield.h"
+#include "PID_v1.h"
 //To be removed
-#include <TestCodeMotorShield.h>
+#include "motorShield.h"
 
 //All Parameters
-#include <definitions.h>
+#include "definitions.h"
 
 // Setup Routine
 void setup() {
-  Serial.begin(9600);  
+  Serial.begin(9600);
   pinMode(encoder1, INPUT);  
   pinMode(encoder2, INPUT);
 }
 
 void loop() {
+
+  //findMiner();
+  //pickupMiner();
+  //returnHome();
+
+ 
 // Suppose there is a relay, or light or solenoid  
 // connected to M3_A and GND. 
 // Note that the 'speed' (the PWM, the intensity)   
@@ -24,13 +30,13 @@ void loop() {
 // The 'speed' (the PWM, the intensity) can be set   
 // to zero, that would make the output disabled   
 // and floating.   
-  // Suppose a DC motor is connected to M1_A(+) and M1_B(-)  
-  // Let it run full speed forward and half speed backward.  
-  // If 'BRAKE' or 'RELEASE' is used, the 'speed' parameter  
-  // is ignored.
+// Suppose a DC motor is connected to M1_A(+) and M1_B(-)
+// Let it run full speed forward and half speed backward.  
+// If 'BRAKE' or 'RELEASE' is used, the 'speed' parameter  
+// is ignored.
   
 
-  
+ /* 
   //Encoder Portion
   // read the input pin:  
   int buttonState = digitalRead(encoder1);  
@@ -40,11 +46,11 @@ void loop() {
   Serial.println(buttonState2);  
   delay(1);       
   // delay in between reads for stability
-  
+  */
   //IR portion
     // 5v
-  float volts1 = analogRead(sensor1)*0.0048828125;  // value from sensor * (5/1024)
-  float volts2 = analogRead(sensor2)*0.0048828125;  // value from sensor * (5/1024)
+  float volts1 = analogRead(rightIR)*0.0048828125;  // value from sensor * (5/1024)
+  float volts2 = analogRead(leftIR)*0.0048828125;  // value from sensor * (5/1024)
   int distance1 = 13*pow(volts1, -1); // worked out from datasheet graph
   int distance2 = 13*pow(volts2, -1); // worked out from datasheet graph
   delay(10); // slow down serial port 
@@ -56,7 +62,13 @@ void loop() {
 void turnLeft()
 {
     // Motor Portion
-  motor(3, FORWARD, 0);  
+  motor_output(3, FORWARD, 0);
   motor(4, FORWARD, 150);
 }
 
+void turnRight()
+{
+    // Motor Portion
+  motor(3, FORWARD, 150);
+  motor(4, FORWARD, 0);
+}
