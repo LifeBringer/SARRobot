@@ -33,3 +33,12 @@ SINGLE	LITERAL1
 DOUBLE	LITERAL1
 INTERLEAVE	LITERAL1
 MICROSTEP	LITERAL1
+
+
+######################################## Syntax Coloring Map For PID Library#######################################
+######################################## Datatypes (KEYWORD1)#######################################
+PID	KEYWORD1
+######################################## Methods and Functions (KEYWORD2)#######################################
+SetMode	KEYWORD2Compute	KEYWORD2SetOutputLimits	KEYWORD2SetTunings	KEYWORD2SetControllerDirection	KEYWORD2SetSampleTime	KEYWORD2GetKp	KEYWORD2GetKi	KEYWORD2GetKd	KEYWORD2GetMode	KEYWORD2GetDirection	KEYWORD2
+######################################## Constants (LITERAL1)#######################################
+AUTOMATIC	LITERAL1MANUAL	LITERAL1DIRECT	LITERAL1REVERSE	LITERAL1P_ON_E	LITERAL1P_ON_M	LITERAL1

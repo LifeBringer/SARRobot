@@ -1,0 +1,21 @@
+#define sensor1 A4 // Sharp IR GP2Y0A41SK0F (4-30cm, analog)
+#define sensor2 A1
+//int led=3;
+
+void setup() {
+  Serial.begin(9600); // start the serial port
+}
+
+void loop() {
+  
+  // 5v
+  float volts1 = analogRead(sensor1)*0.0048828125;  // value from sensor * (5/1024)
+  float volts2 = analogRead(sensor2)*0.0048828125;  // value from sensor * (5/1024)
+  int distance1 = 13*pow(volts1, -1); // worked out from datasheet graph
+  int distance2 = 13*pow(volts2, -1); // worked out from datasheet graph
+  delay(10); // slow down serial port 
+  Serial.print(volts1);
+  Serial.println(distance2);
+ 
+  
+} 
