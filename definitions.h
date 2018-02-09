@@ -6,3 +6,14 @@
 //int led=3;
 int encoder1 = 14;
 int encoder2 = 15;
+
+long microsecondsToInches(long microseconds)
+{
+  return microseconds / 74 / 2;
+}
+
+long microsecondsToCentimeters(long microseconds)
+
+{
+  return microseconds / 29 / 2;}
+
