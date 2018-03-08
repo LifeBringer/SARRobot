@@ -287,14 +287,14 @@ void grabMiner()
   if (frontSensor <2 && ultrasonic>6)
   {
      stepperMotor->step(100, FORWARD, SINGLE); 
-      minerRetrived == true;
+      minerRetrived = true;
   }
      
   
   // Bryan
   // loop forward until frontSensor < 2 cm
   // Put stepper code here
-  // minerRetrieved == true
+  // minerRetrieved = true
 }
 
 /// FOR PID ///
