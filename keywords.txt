@@ -1,44 +1,64 @@
 #######################################
-# Syntax Coloring Map for AFMotor
+# Syntax Coloring Map For TimerOne
 #######################################
 
 #######################################
 # Datatypes (KEYWORD1)
 #######################################
 
-MS_DCMotor	KEYWORD1
-MS_Stepper	KEYWORD1
+TimerOne                       KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-enable	KEYWORD2
-run	KEYWORD2
-setSpeed	KEYWORD2
-step	KEYWORD2
-onestep	KEYWORD2
-release	KEYWORD2
+initialize                     KEYWORD2
+start                          KEYWORD2
+stop                           KEYWORD2
+restart                        KEYWORD2
+resume                         KEYWORD2
+read                           KEYWORD2
+pwm                            KEYWORD2
+disablePwm                     KEYWORD2
+attachInterrupt                KEYWORD2
+detachInterrupt                KEYWORD2
+setPeriod                      KEYWORD2
+setPwmDuty                     KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
 #######################################
 
-MICROSTEPPING	LITERAL1
-FORWARD	LITERAL1
-BACKWARD	LITERAL1
-BRAKE	LITERAL1
-RELEASE	LITERAL1
-SINGLE	LITERAL1
-DOUBLE	LITERAL1
-INTERLEAVE	LITERAL1
-MICROSTEP	LITERAL1
 
-
-######################################## Syntax Coloring Map For PID Library#######################################
-######################################## Datatypes (KEYWORD1)#######################################
+#######################################
+# Syntax Coloring Map For PID Library
+#######################################
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
 PID	KEYWORD1
-######################################## Methods and Functions (KEYWORD2)#######################################
-SetMode	KEYWORD2Compute	KEYWORD2SetOutputLimits	KEYWORD2SetTunings	KEYWORD2SetControllerDirection	KEYWORD2SetSampleTime	KEYWORD2GetKp	KEYWORD2GetKi	KEYWORD2GetKd	KEYWORD2GetMode	KEYWORD2GetDirection	KEYWORD2
-######################################## Constants (LITERAL1)#######################################
-AUTOMATIC	LITERAL1MANUAL	LITERAL1DIRECT	LITERAL1REVERSE	LITERAL1P_ON_E	LITERAL1P_ON_M	LITERAL1
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+SetMode                        KEYWORD2
+Compute	                       KEYWORD2
+SetOutputLimits                KEYWORD2
+SetTunings                     KEYWORD2
+SetControllerDirection         KEYWORD2
+SetSampleTime                  KEYWORD2
+GetKp                          KEYWORD2
+GetKi	                       KEYWORD2
+GetKd	                       KEYWORD2
+GetMode	                       KEYWORD2
+GetDirection	               KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+AUTOMATIC	LITERAL1
+MANUAL	LITERAL1
+DIRECT	LITERAL1
+REVERSE	LITERAL1
+P_ON_E	LITERAL1
+P_ON_M	LITERAL1
