@@ -14,7 +14,7 @@ float exitReached = 100000000; /// Distance on the way back to switch wall follo
 Adafruit_MotorShield motorS = Adafruit_MotorShield();
 Adafruit_DCMotor *leftMotor = motorS.getMotor(1);
 Adafruit_DCMotor *rightMotor = motorS.getMotor(2);
-Adafruit_StepperMotor *sevoMotor = motorS.getStepper(200, 2);
+Adafruit_StepperMotor *stepperMotor = motorS.getStepper(200, 3);
 
 //
 // int E1 = 3;
@@ -286,7 +286,7 @@ void grabMiner()
 {
   if (frontSensor <2 && ultrasonic>6)
   {
-     servoMotor->step(100, FORWARD, SINGLE); 
+     stepperMotor->step(100, FORWARD, SINGLE); 
       minerRetrived == true;
   }
      
