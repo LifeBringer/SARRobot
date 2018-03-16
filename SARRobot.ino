@@ -254,15 +254,6 @@ void angle()
   theta = atan(opposite / adjacent);
   //Serial.println(theta);
 }
-//Used when the right wall follower is implemented. When the machine encounters a wall in the front
-//and a wall the the right the right wall follower will simply stop. Therefore the machine will have to make a left turn while still
-//in the right wall follower mode to continue following the wall.
-// ___________________
-// |
-// | ----------->
-// | | ___________
-// | | |
-// | | |
 void RightTurn() // Continuously Turns Right Never Called
 {
   leftMotor->run(FORWARD);
